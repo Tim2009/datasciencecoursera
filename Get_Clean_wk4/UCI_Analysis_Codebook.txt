@@ -1,0 +1,128 @@
+CODEBOOK: Coursera Data Science Specialization - Getting and Cleaning Data (Tim Dyke)
+Week 4 Assignment
+
+This codebook describes the data used for the final assignment of the Coursera Data Science Specialization - Getting and Cleaning course. It should be read in conjunction with the associated readme which describes the specific files of the raw data, analysis steps and assumptions made.
+
+**Data Source:** The raw data was sourced from the UCI data repository found at:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+Further information : 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+**Input/Raw data description:** The input data contained observations of 30 each individuals conducting 6 different activities each of which is measured and captured as raw time series data. The raw time series data is then processed to generate a range of 561 derived measurement variables containing values for parameters such as the mean measurement over the time period of the activity, the standard deviation of the raw measurements, the entropy of the measurements in the time series, the minimum and maximum raw values etc. The raw data was also filtered through means such as Fourier transforms to separate out low high and constant frequency components which were matched to the effect of gravity and different body movements and forces.
+
+**Output data description:** The summary data set contains a reduced number of variables, more specifically only those that represented mean or standard deviation calculations of the raw data. The reason for this selection was to generate a more manageable, tidy, data set for the purpose of doing initial exploratory analysis and visualisation of the available data before returning to the main data set for more in depth analysis; this analysis component being outside the scope of the current assignment. 
+
+**Data set features: **The resulting tidy data set has the following features
+
+180 observations corresponding to the unique combination of the two categorical variables in the original data set
+Categorical Variables:
+"Subject" = the unique ID (numeric categorical variable) given to each of the 30 individual volunteers that carried the Samsung Galaxy phones
+"Activity" = One of six descriptive names (named categorical variable) describing the behaviour of the subject during the period that the subsequent measurements were taken, some data collection subjectivity in assignment likely as precise definitions of each activity not provided.
+
+88 variables including the two categorical variables described above along with 86 numerical variables derived values based on the raw data measurements found in the original zip file references above.
+The raw data was sourced from the time series readings of the accelerometer and gyroscope devices contained with the Samsung Galaxy smartphone carried by each of the subject volunteers
+Numerical Variables:
+All numerical variables are derived values based on the raw data found in the original zip file references above.
+For summary purposes, only those derived values in the original data that have calculated either the mean or standard deviation of some aspect of the raw data have been fed into the summary tidy dataset
+Overview of Variable terms:
+Leading t or f = time(t) or frequency(f) measurements.
+Body = related to body movement.
+Gravity = acceleration of gravity derived based on low frequency elements of the motion
+Acc = accelerometer measurement
+Gyro = gyroscopic measurements
+Jerk = sudden movement acceleration derived bases on high frequency elements of the motion
+Mag = magnitude of movement
+Freq = Fourier transform based calculation of the motion frequency
+X, Y, Z = axial components of the movement (X,Y orthogonal horizontal axes and Z vertical axis) 
+Mean and std are calculated for each subject for each activity from the raw data measurements. The units are g’s for the accelerometer, rad/sec for the gyro and g/sec and rad/sec/sec for the jerks.
+Numbers at the end of the Variable name indicate the column number of the original UCI data set  that was averaged for summary purposes for ease of comparison or reconstruction
+
+Specific list of Numerical Variable names using above naming convention:
+
+"tBodyAcc_mean_X_1"
+"tBodyAcc_mean_Y_2"
+"tBodyAcc_mean_Z_3"
+"tGravityAcc_mean_X_41"
+"tGravityAcc_mean_Y_42"
+"tGravityAcc_mean_Z_43"
+"tBodyAccJerk_mean_X_81"
+"tBodyAccJerk_mean_Y_82"
+"tBodyAccJerk_mean_Z_83"
+"tBodyGyro_mean_X_121"
+"tBodyGyro_mean_Y_122"
+"tBodyGyro_mean_Z_123"
+"tBodyGyroJerk_mean_X_161"
+"tBodyGyroJerk_mean_Y_162"
+"tBodyGyroJerk_mean_Z_163"
+"tBodyAccMag_mean_201"
+"tGravityAccMag_mean_214"
+"tBodyAccJerkMag_mean_227"
+"tBodyGyroMag_mean_240"
+"tBodyGyroJerkMag_mean_253"
+"fBodyAcc_mean_X_266"
+"fBodyAcc_mean_Y_267"
+"fBodyAcc_mean_Z_268"
+"fBodyAcc_meanFreq_X_294"
+"fBodyAcc_meanFreq_Y_295"
+"fBodyAcc_meanFreq_Z_296"
+"fBodyAccJerk_mean_X_345"
+"fBodyAccJerk_mean_Y_346"
+"fBodyAccJerk_mean_Z_347"
+"fBodyAccJerk_meanFreq_X_373"
+"fBodyAccJerk_meanFreq_Y_374"
+"fBodyAccJerk_meanFreq_Z_375"
+"fBodyGyro_mean_X_424"
+"fBodyGyro_mean_Y_425"
+"fBodyGyro_mean_Z_426"
+"fBodyGyro_meanFreq_X_452"
+"fBodyGyro_meanFreq_Y_453"
+"fBodyGyro_meanFreq_Z_454"
+"fBodyAccMag_mean_503"
+"fBodyAccMag_meanFreq_513"
+"fBodyBodyAccJerkMag_mean_516"
+"fBodyBodyAccJerkMag_meanFreq_526"
+"fBodyBodyGyroMag_mean_529"
+"fBodyBodyGyroMag_meanFreq_539"
+"fBodyBodyGyroJerkMag_mean_542"
+"fBodyBodyGyroJerkMag_meanFreq_552"
+"angletBodyAccMean,gravity_555"
+"angletBodyAccJerkMean,gravityMean_556"
+"angletBodyGyroMean,gravityMean_557"
+"angletBodyGyroJerkMean,gravityMean_558"
+"angleX,gravityMean_559"
+"angleY,gravityMean_560"
+"angleZ,gravityMean_561"
+"tBodyAcc_std_X_4"
+"tBodyAcc_std_Y_5"
+"tBodyAcc_std_Z_6"
+"tGravityAcc_std_X_44"
+"tGravityAcc_std_Y_45"
+"tGravityAcc_std_Z_46"
+"tBodyAccJerk_std_X_84"
+"tBodyAccJerk_std_Y_85"
+"tBodyAccJerk_std_Z_86"
+"tBodyGyro_std_X_124"
+"tBodyGyro_std_Y_125"
+"tBodyGyro_std_Z_126"
+"tBodyGyroJerk_std_X_164"
+"tBodyGyroJerk_std_Y_165"
+"tBodyGyroJerk_std_Z_166"
+"tBodyAccMag_std_202"
+"tGravityAccMag_std_215"
+"tBodyAccJerkMag_std_228"
+"tBodyGyroMag_std_241"
+"tBodyGyroJerkMag_std_254"
+"fBodyAcc_std_X_269"
+"fBodyAcc_std_Y_270"
+"fBodyAcc_std_Z_271"
+"fBodyAccJerk_std_X_348"
+"fBodyAccJerk_std_Y_349"
+"fBodyAccJerk_std_Z_350"
+"fBodyGyro_std_X_427"
+"fBodyGyro_std_Y_428"
+"fBodyGyro_std_Z_429"
+"fBodyAccMag_std_504"
+"fBodyBodyAccJerkMag_std_517"
+"fBodyBodyGyroMag_std_530"
+"fBodyBodyGyroJerkMag_std_543"
+
